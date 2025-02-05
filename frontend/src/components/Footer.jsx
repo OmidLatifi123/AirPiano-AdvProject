@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <p className="footer-text">
-          &copy; {new Date().getFullYear()} Digital Instrument | Designed by Omid Latifi
+          &copy; {new Date().getFullYear()} AirPiano | Designed by Omid Latifi
         </p>
         <div className="footer-links">
           <a href="/about" className="footer-link">About</a>
