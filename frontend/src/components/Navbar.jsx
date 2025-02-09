@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          🎹 Air Piano
+          🎹 AirPiano
         </Link>
         <ul className="navbar-links">
           <li>
@@ -17,7 +17,7 @@ const Navbar = () => {
             <Link to="/about">About</Link>
           </li>
           <li>
-            <a href="#features">Features</a>
+          <Link to="/albumcovers">Album Covers</Link>
           </li>
           <li>
             <a href="#contact">Contact</a>
