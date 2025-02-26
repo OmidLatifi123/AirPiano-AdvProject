@@ -78,9 +78,6 @@ const AlbumCover = () => {
               <p>
                 <strong>Filename:</strong> {cover.filename}
               </p>
-              <p>
-                <strong>Date Created:</strong> {new Date(cover.createdAt).toLocaleString()}
-              </p>
               <button
                 onClick={() =>
                   downloadImage(
