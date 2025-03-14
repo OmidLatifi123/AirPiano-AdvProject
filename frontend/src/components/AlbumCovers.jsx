@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./CSS/albumcovers.css";
+import Bird from './Bird'; // Import Bird component
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
@@ -77,6 +78,9 @@ const AlbumCover = () => {
             <div style={{ marginTop: "10px", textAlign: "left" }}>
               <p>
                 <strong>Filename:</strong> {cover.filename}
+              </p>
+              <p>
+                <strong>Date Created:</strong> {new Date(cover.createdAt).toLocaleString()}
               </p>
               <button
                 onClick={() =>
