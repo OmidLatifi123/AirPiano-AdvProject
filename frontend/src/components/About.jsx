@@ -1,13 +1,14 @@
 import React from "react";
 import "./CSS/About.css";
 import Omid from "./CSS/Images/Omid.png";
+import Bird from './Bird'; // Import Bird component
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 const About = () => {
   return (
     <div className="about-container">
-                  <Navbar />
+      <Navbar />
 
       <h1 className="about-title">About AirPiano</h1>
       <p className="about-description">
@@ -16,18 +17,19 @@ const About = () => {
       <p className="about-mission">
         Our mission is to bridge the gap in music education and bring the joy of music to everyone, irrespective of their background or circumstances.
       </p>
-      <h2 className="developers-title">The Team(?)</h2>
+
+      <h2 className="developers-title">Meet the man Behind airpiano</h2>
       <div className="developers">
         <div className="developer">
           <img src={Omid} alt="Omid Latifi" className="developer-image" />
           <h3 className="developer-name">Omid Latifi</h3>
           <p className="developer-description">
-            Omid is a passionate software developer committed to creating innovative solutions for real-world challenges. With expertise in web development and a love for music, he developed AirPiano to make music accessible to all.
+            Omid is a passionate software developer committed to creating innovative solutions for real-world challenges. With expertise in web development and a love for music, he co-developed Digital Instrument to make music accessible to all.
           </p>
         </div>
       </div>
+<Bird/>
       <Footer />
-
     </div>
   );
 };

@@ -1,17 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
-// import OpenAI from 'openai';
+import OpenAI from 'openai';
 import './CSS/Bird.css';
 import bird from './CSS/Images/bird.png';
 import birdFly from './CSS/Images/bird-fly.png';
 import birdFly1 from './CSS/Images/bird-fly1.png';
 
-// const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
-// console.log('API Key exists:', !!apiKey);
+const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
+console.log('API Key exists:', !!apiKey);
 
-// const openai = new OpenAI({
-//   apiKey: apiKey,
-//   dangerouslyAllowBrowser: true,
-// });
+const openai = new OpenAI({
+  apiKey: apiKey,
+  dangerouslyAllowBrowser: true,
+});
 
 function Bird() {
   const [isFlying, setIsFlying] = useState(false);
@@ -85,30 +85,30 @@ function Bird() {
     setIsTextboxOpen((prev) => !prev);
   };
 
-  // const handleSendMessage = async () => {
-  //   if (input.trim() === '') return;
+  const handleSendMessage = async () => {
+    if (input.trim() === '') return;
 
-  //   const userMessage = input.trim();
-  //   setMessages((prev) => [...prev, { text: userMessage, type: 'sent' }]);
-  //   setInput('');
+    const userMessage = input.trim();
+    setMessages((prev) => [...prev, { text: userMessage, type: 'sent' }]);
+    setInput('');
 
-  //   // try {
-  //   //   const completion = await openai.chat.completions.create({
-  //   //     messages: [
-  //   //       { role: 'system', content: "You are Melody, a virtual music tutor knowledgeable in all things music-related. Only answer music-related questions. If the user asks about something unrelated to music, politely remind them that your expertise is in music. Keep answers brief." },
-  //   //       { role: 'user', content: userMessage },
-  //   //     ],
-  //   //     model: 'gpt-4',
-  //   //   });
+    try {
+      const completion = await openai.chat.completions.create({
+        messages: [
+          { role: 'system', content: "You are Melody, a virtual music tutor knowledgeable in all things music-related. Only answer music-related questions. If the user asks about something unrelated to music, politely remind them that your expertise is in music. Keep answers brief." },
+          { role: 'user', content: userMessage },
+        ],
+        model: 'gpt-4',
+      });
 
-  //     const melodyResponse = completion.choices[0].message.content;
-  //     setMessages((prev) => [...prev, { text: melodyResponse, type: 'received' }]);
-  //   } catch (err) {
-  //     setError(err.message);
-  //     setMessages((prev) => [...prev, { text: 'Sorry, I could not process your message. Please try again later.', type: 'received' }]);
-  //     console.error('Error:', err);
-  //   }
-  // };
+      const melodyResponse = completion.choices[0].message.content;
+      setMessages((prev) => [...prev, { text: melodyResponse, type: 'received' }]);
+    } catch (err) {
+      setError(err.message);
+      setMessages((prev) => [...prev, { text: 'Sorry, I could not process your message. Please try again later.', type: 'received' }]);
+      console.error('Error:', err);
+    }
+  };
 
   return (
     <div>
@@ -148,7 +148,7 @@ function Bird() {
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Type your message..."
               />
-              {/* <button onClick={handleSendMessage}>Send</button> */}
+              <button onClick={handleSendMessage}>Send</button>
             </div>
           </div>
         )}

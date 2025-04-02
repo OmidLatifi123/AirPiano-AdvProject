@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          🎹 AirPiano
+          AirPiano
         </Link>
         <ul className="navbar-links">
           <li>
@@ -20,12 +20,12 @@ const Navbar = () => {
           <Link to="/albumcovers">Album Covers</Link>
           </li>
           <li>
+          <Link to="/sheetmusic">Sheet Music</Link>
+          </li>
+          <li>
             <a href="/tutorial">Tutorial</a>
           </li>
         </ul>
-        <Link to="#get-started" className="navbar-cta">
-          Get Started
-        </Link>
       </div>
     </nav>
   );
